@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def navbar_color
-    @navbar_color ||= set_navbar_color
-  end
-
-  def set_navbar_color
-    current_user.present? ? @current_user.navbar_color : '#370617'
+    current_user.present? ? current_user.navbar_color : '#370617'
   end
 end
