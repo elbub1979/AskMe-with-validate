@@ -9,4 +9,8 @@ module ApplicationHelper
       many
     end
   end
+
+  def navbar_color
+    current_user&.navbar_color || '#370617'
+  end
 end

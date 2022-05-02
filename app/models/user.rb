@@ -9,6 +9,9 @@ class User < ApplicationRecord
   # email validates
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
+  # navbar_color validates
+  validates :navbar_color, presence: true, format: { with: /\A#[a-f0-9]{6}\z/i }
+
   def downcase_nickname
     nickname.downcase!
   end
