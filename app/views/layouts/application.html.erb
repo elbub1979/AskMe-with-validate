@@ -20,13 +20,6 @@
           <%= content_tag 'span', "@#{current_user.nickname}", class: 'mr-sm' %>
           <%= button_to 'Выйти', session_path, form: { data: { turbo_confirm: "Уже покидаете сайт?" } }, method: :delete, class: "mr-sm" %>
         </div>
-        <div class="text-ar mt">
-          <%= form_with model: current_user, data: { turbo: false } do |form| %>
-            <%= form.label :navbar_color, 'Сменить цвет навигационной панели' %>
-            <%= form.color_field :navbar_color, value: navbar_color %>
-            <%= form.submit 'Применить', class: 'button button-main' %>
-          <% end %>
-        </div>
       <% else %>
         <%= link_to 'Регистрация', new_user_path, class: 'button button-yellow mr-sm' %>
         <%= link_to 'Вход', new_session_path, class: 'button button-yellow' %>
