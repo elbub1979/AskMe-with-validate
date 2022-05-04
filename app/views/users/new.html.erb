@@ -12,7 +12,14 @@
   <div class="mt">
     <%= form_with model: @user, data: { turbo: false } do |form| %>
 
-      <%= render 'form', form: form %>
+      <p><%= form.label :name, 'Имя' %></p>
+      <p><%= form.text_field :name, class: 'form-text-field' %></p>
+
+      <p class="mt"><%= form.label :nickname, 'Ник на сайте' %></p>
+      <p><%= form.text_field :nickname, class: 'form-text-field' %></p>
+
+      <p class="mt"><%= form.label :email, 'Электронная почта' %></p>
+      <p><%= form.text_field :email, class: 'form-text-field' %></p>
 
       <p class="mt"><%= form.label :password %></p>
       <p><%= form.password_field :password, class: 'form-text-field' %></p>
